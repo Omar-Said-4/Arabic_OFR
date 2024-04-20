@@ -61,3 +61,34 @@ def assure_white_bg(image):
         #ret, thresh = cv2.threshold(image,50, 255, cv2.THRESH_BINARY_INV)
         thresh=255-image
     return thresh
+def get_words(image):
+    # Get the contours of the image
+    process_on=image.copy()
+    dilated_image = cv2.dilate(process_on, np.ones((3, 3), np.uint8), iterations=1)
+    contours, _ = cv2.findContours(dilated_image, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+    # Filter out the small contours
+    min_contour_area = 50
+    filtered_contours = [cnt for cnt in contours if cv2.contourArea(cnt) > min_contour_area]
+    # Sort the contours from left to right
+    filtered_contours = sorted(filtered_contours, key=lambda cnt: cv2.boundingRect(cnt)[0])
+    # cv2.drawContours(x, filtered_contours, -1, (0, 255, 0), 3)
+    # cv2.imshow('contours', x)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
+    cropped_images = []
+    
+    # Iterate through each contour and crop the image
+    for contour in filtered_contours:
+        x, y, w, h = cv2.boundingRect(contour)
+        if (w*h >1000 ):
+            cropped_image = image[y:y+h, x:x+w]
+            cropped_images.append(cropped_image)
+    
+    # Display the cropped images (optional)
+    # for i, cropped_img in enumerate(cropped_images):
+    #     cv2.imshow(f'Cropped Image {i}', cropped_img)
+    #     cv2.waitKey(0)
+    
+    # cv2.destroyAllWindows()
+    #print (f'Number of words: {len(cropped_images)}')
+    return cropped_images
