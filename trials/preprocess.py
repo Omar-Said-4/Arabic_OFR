@@ -116,7 +116,7 @@ def denoise(image):
     else:
         median_filter = cv2.medianBlur(gray_image, 5)
         return median_filter
-def get_words_grey(binr,img):
+def get_words_grey(binr,img,resize=False):
     process_on=binr.copy()
     dilated_image = cv2.dilate(process_on, np.ones((3, 3), np.uint8), iterations=1)
     contours, _ = cv2.findContours(dilated_image, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
@@ -136,6 +136,8 @@ def get_words_grey(binr,img):
         x, y, w, h = cv2.boundingRect(contour)
         if (w*h >1000 ):
             cropped_image = img[y:y+h, x:x+w]
+            if resize:
+                cropped_image = cv2.resize(cropped_image, (64, 64))
             cropped_images.append(cropped_image)
     
     # Display the cropped images (optional)
@@ -145,4 +147,9 @@ def get_words_grey(binr,img):
     
     # cv2.destroyAllWindows()
     #print (f'Number of words: {len(cropped_images)}')
-    return cropped_images  
+    return cropped_images    
+
+
+
+def resize_image(image, width, height):
+    return cv2.resize(image, (width, height), interpolation=cv2.INTER_AREA)

@@ -92,3 +92,5 @@ def get_words(image):
     # cv2.destroyAllWindows()
     #print (f'Number of words: {len(cropped_images)}')
     return cropped_images
+def resize_image(image, width, height):
+    return cv2.resize(image, (width, height), interpolation=cv2.INTER_AREA)
