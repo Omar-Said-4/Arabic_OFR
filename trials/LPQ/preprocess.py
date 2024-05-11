@@ -4,6 +4,8 @@ import cv2
 
 def preprocess_image(img, desired_size=(256, 256)):
 
+    img = cv2.cvtColor(img,  cv2.COLOR_RGB2GRAY)
+
     # Apply median filter to remove salt and pepper noise
     denoised_img = cv2.medianBlur(img, 3)
 
