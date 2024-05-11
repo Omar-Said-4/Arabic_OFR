@@ -111,3 +111,9 @@ class ClassifiersManager:
     def load_all_classifiers(self):
         for classifier_enum, _ in self.classifiers.items():
             self.load_model(classifier_enum)
+
+    def predict(self, classifier_enum, features):
+        predicted_labels = self.classifiers[classifier_enum].predict(
+            features)
+
+        return predicted_labels

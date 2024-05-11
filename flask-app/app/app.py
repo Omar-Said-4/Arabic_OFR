@@ -7,9 +7,10 @@ from LPQ import *
 from base64 import b64encode
 import io
 from PIL import Image
+import os
 
 # Load your trained SVM model
-model = joblib.load(R"D:\Downloads\College\Neural Networks\Project\archive\Michael\flask-app\app\models\SVM.pkl")
+model = joblib.load(os.path.join(os.getcwd(), "models", "SVM.pkl"))
 
 app = Flask(__name__)
 
