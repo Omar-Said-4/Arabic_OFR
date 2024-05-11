@@ -10,11 +10,11 @@ from PIL import Image
 import os
 
 # Load your trained SVM model
-model = joblib.load(os.path.join(os.getcwd(), "models", "SVM.pkl"))
+model = joblib.load(os.path.join(os.getcwd(), "models", "final-svm.pkl"))
 
 app = Flask(__name__)
 
-classes = ['IBM Plex Sans Arabic', 'Lemonada', 'Marhey', 'Scheherazade New']
+classes = ['Scheherazade New', 'Marhey', 'Lemonada','IBM Plex Sans Arabic' ]
 
 def preprocess_image(image, desired_size=(256, 256)):
     img = cv2. cvtColor(image, cv2. COLOR_BGR2GRAY)
@@ -64,7 +64,7 @@ def classify_image():
         predicted_class = model.predict(lpq_features)[0]
 
         # Make a prediction
-        prediction = classes[predicted_class - 1]
+        prediction = classes[predicted_class]
 
         # Convert the image to base64
         img = Image.fromarray(image.astype("uint8"))
