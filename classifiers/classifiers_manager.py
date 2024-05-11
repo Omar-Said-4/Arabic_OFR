@@ -49,6 +49,16 @@ class ClassifiersManager:
             true_labels, predicted_labels, target_names=target_names)
         return classifier_metrics
 
+    def predict(self, classifier_enum, testing_features):
+        predicted_labels = self.classifiers[classifier_enum].predict(
+            testing_features)
+        return predicted_labels
+
+    def getClassificationReport(self, predicted_labels, true_labels, target_names):
+        classifier_metrics = metrics.classification_report(
+            true_labels, predicted_labels, target_names=target_names)
+        return classifier_metrics
+
     def train_all_classifiers(self, training_features, training_labels):
         for classifier_enum, _ in self.classifiers.items():
             self.train(classifier_enum, training_features, training_labels)
