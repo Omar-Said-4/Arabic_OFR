@@ -1,6 +1,7 @@
 ## Box Counting Dimension (BCD)
-![image](https://github.com/Omar-Said-4/Arabic_OFR/assets/87082462/f17a76eb-df50-4055-89d7-2f372d5cb3c4)
-
+<p align="center">
+  <img src="https://github.com/Omar-Said-4/Arabic_OFR/assets/87082462/f17a76eb-df50-4055-89d7-2f372d5cb3c4">
+</p>
 The Box Counting Dimension (BCD) is one of the most widely used fractal dimensions. Its popularity is largely due to its relatively simple mathematical calculation and estimation process.
 
 To estimate the BCD, follow these steps:
