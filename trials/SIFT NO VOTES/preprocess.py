@@ -39,8 +39,13 @@ def threshold_image(image):
         ret, thresh = cv2.threshold(gray_image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)   #180
     # check salt and pepper to rethreshold
     contours, _ = cv2.findContours(thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+    # Convert contours to a numpy array of contour areas
+    contour_areas = np.array([cv2.contourArea(cnt) for cnt in contours])
+
+    # Filter contours based on area using numpy indexing
     min_contour_area = 50
-    filtered_contours = [cnt for cnt in contours if cv2.contourArea(cnt) > min_contour_area]
+    filtered_contours = contours[contour_areas > min_contour_area]
+
     if abs(len(filtered_contours)-len(contours))<8000 :
        return thresh
     else:
@@ -116,6 +121,7 @@ def denoise(image):
     else:
         median_filter = cv2.medianBlur(gray_image, 5)
         return median_filter
+
 def get_words_grey(binr,img,resize=False):
     process_on=binr.copy()
     dilated_image = cv2.dilate(process_on, np.ones((3, 3), np.uint8), iterations=1)
