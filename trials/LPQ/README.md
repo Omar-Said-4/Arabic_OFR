@@ -1,17 +1,26 @@
-## 1) Project Pipeline
+## 1)Pipeline
 
+
+<p align="center">
+  <img src="https://github.com/Omar-Said-4/Arabic_OFR/assets/87082462/1f03e7d0-cbd4-4fd3-b602-070ab61884e9">
+</p>
 
 
 ## 2) Preprocessing Module
+<p align="center">
+  <img src="https://github.com/Omar-Said-4/Arabic_OFR/assets/87082462/10045550-428f-40d7-b8af-c19b3398983d">
+</p>
 
-## 3) Feature Extraction/Selection Module
 
-## Local Phase Quantization (LPQ) Feature Extraction Module
+## 3) Feature Extraction/Selection Module `(Local Phase Quantization (LPQ) Feature Extraction Module)`
+
+
+![image](https://github.com/Omar-Said-4/Arabic_OFR/assets/87082462/6c68a18e-e4b3-429f-95bd-47734b1596be)
 
 
 ### Overview
 
-The LPQ Feature Extraction Module analyzes the texture of grayscale images. It uses the Local Phase Quantization method to generate a feature
+The `LPQ` Feature Extraction Module analyzes the texture of grayscale images. It uses the Local Phase Quantization method to generate a feature
 vector that describes the unique patterns and textures within an image. This vector is then used to train our model.
 
 ### Implementation
@@ -113,28 +122,16 @@ img: The input image array.
 A normalized histogram representing the LPQ feature vector.
 ```
 ## 4) Model Selection/Training Module
+![image](https://github.com/Omar-Said-4/Arabic_OFR/assets/87082462/356b58fc-f946-40e6-b0b5-041443804455)
 
 
 ## 5) Performance Analysis Module
 
 
-After conducting experiments with SVM, KNN, Random Forest, Decision Tree, and AdaBoost, our analysis revealed that SVM performed the
-best, achieving an accuracy of 98%, followed by Random Forest with 96%.
+After conducting experiments with SVM, KNN, Random Forest, Decision Tree, and AdaBoost, our analysis revealed that the SVM model achieved the best performance. 
+It attained an accuracy of `97.5%` on the test data and completed the evaluation in under `35` seconds on `1000` samples.
 
 
-## 6) Enhancements and Future work
 
-1. **Data Augmentation** : The current model primarily relies on a limited dataset of Arabic font images. To improve the model's robustness and
-    generalization capabilities, future work should explore data augmentation techniques. By introducing transformations like rotation, scaling,
-    and noise, we can effectively increase the diversity and size of the training dataset.
-2. **Transfer Learning** : Investigating the potential of transfer learning is essential. By leveraging pre-trained models, such as convolutional
-    neural networks (CNNs), trained on large-scale image datasets, we can benefit from their learned features and apply fine-tuning to adapt
-    them to our specific Arabic font classification task. This approach may lead to improved performance and faster convergence.
-3. **Adversarial Attacks and Defenses** : Investigate the vulnerability of the model to adversarial attacks, where carefully crafted perturbations
-    are added to the input images to deceive the model's predictions. Explore techniques such as adversarial training or defensive distillation to
-    enhance the model's robustness against such attacks.
-4. **Multi-lingual Font Classification** : Extend the model's capabilities to handle font classification for multiple languages, beyond Arabic.
-    Investigate approaches to accommodate different scripts, such as Latin, Cyrillic, or Indic, and explore the potential for shared
-    representations or transfer learning across different language scripts.
 
 
