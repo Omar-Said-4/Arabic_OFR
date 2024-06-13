@@ -14,7 +14,7 @@ To estimate the BCD, follow these steps:
 
 `BCD(r) = lim_{r to 0} {log N(r)}/{log(1/r)}`
 
-### Methods Used:
+### Implementation:
 #### box_count(image, box_size)
 ```
 DESC: Counts the number of non-empty boxes of a specific size covering the image.
