@@ -25,7 +25,7 @@ vector that describes the unique patterns and textures within an image. This vec
 
 ### Implementation
 
-#### validate_image(img)
+#### `validate_image(img)`
 
 Validates that the input is a grayscale image.
 
@@ -44,7 +44,7 @@ The image converted to a 64-bit floating-point format if valid.
 ```
 ValueError: If the input image is not a grayscale image.
 ```
-#### create_filters(win_size)
+#### `create_filters(win_size)`
 
 Creates a set of filters for the LPQ method.
 
@@ -68,7 +68,7 @@ patterns and edges.
 Conjugate Complex Exponential Filter (w2): The third filter is the complex conjugate of the second filter (w1).
 ```
 
-#### apply_filters(img, filters, conv_mode='valid')
+#### `apply_filters(img, filters, conv_mode='valid')`
 
 Applies the LPQ filters to the image and returns the frequency response.
 
@@ -92,7 +92,7 @@ Combination (w1, w0): This pair does the opposite, looking for patterns spread o
 Combination (w1, w1): This pair detects diagonal patterns.
 Combination (w1, w2): This pair is like a cross-check.
 ```
-#### compute_codewords(freq_resp)
+#### `compute_codewords(freq_resp)`
 
 Computes the LPQ codewords from the frequency response obtained from the filters. It converts the frequency response into a binary code by
 checking if each response is greater than zero and then sums these binary codes weighted by powers of two.
@@ -107,7 +107,7 @@ freq_resp: The frequency response array obtained from apply_filters.
 ```
 An array of LPQ codewords.
 ```
-#### lpq(img)
+#### `lpq(img)`
 
 The main function that applies the LPQ method to an input image and returns a normalized histogram as a feature vector.
 
