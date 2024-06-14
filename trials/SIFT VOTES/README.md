@@ -83,7 +83,7 @@ BoVW representation as a normalized histogram.
 ## 5) Performance Analysis Module
 
 
-After conducting experiments with SVM, KNN, Random Forest, Decision Tree, and AdaBoost, our analysis revealed that the SVM model achieved the best performance. It attained an accuracy of 99.1% on the test data. using voting over a group of image syllables.
+After conducting experiments with SVM, KNN, Random Forest, Decision Tree, and AdaBoost, our analysis revealed that the SVM model achieved the best performance. It attained an accuracy of `99.1%` on the test data. using voting over a group of image syllables.
 
 
 
