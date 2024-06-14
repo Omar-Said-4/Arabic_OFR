@@ -8,8 +8,7 @@ $$
 \mu_{pq} = \sum_{x,y} (x - \bar{x})^p (y - \bar{y})^q I(x, y)
 $$
 
-where \( \bar{x} \) and \( \bar{y} \) are the centroid coordinates of the image, and \( I(x, y) \) is the intensity of the pixel at position \( (x, y) \).
-
+where \${\bar{x}}$ and \${\bar{y}}$ are the centroid coordinates of the image, and \( I(x, y) \) is the intensity of the pixel at position \( (x, y) \).
 2. **Normalize the central moments**:
 
 Normalize the central moments to achieve scale invariance:
@@ -69,7 +68,7 @@ The final result, `huMoments`, represents the processed Hu Moments, which are us
 moments = cv2.moments(im)
 huMoments = cv2.HuMoments(moments)
 huMoments = -np.sign(huMoments) * np.log10(np.abs(huMoments + 0.001))
-
+```
 
 ### Performance Analysis 
 
