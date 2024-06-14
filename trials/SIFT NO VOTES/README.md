@@ -8,7 +8,7 @@
 
 ## 2) Preprocessing Module
 <p align="center">
-  <img src="https://github.com/Omar-Said-4/Arabic_OFR/assets/87082462/10045550-428f-40d7-b8af-c19b3398983d">
+  <img src="https://github.com/Omar-Said-4/Arabic_OFR/assets/87082462/2eb66e70-c8b1-47a4-a4b2-33b9bfc7b06e">
 </p>
 
 
