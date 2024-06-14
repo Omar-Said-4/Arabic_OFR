@@ -2,6 +2,10 @@
 
 Steerable pyramids are a versatile image decomposition technique used in image processing and computer vision. They offer a hierarchical representation of images, capturing both spatial structures and orientation information effectively.
 
+<p align="center">
+  <img src="https://github.com/Omar-Said-4/Arabic_OFR/assets/87082462/0a63bf45-8ecf-49b0-9763-d9bee9afc029">
+</p>
+
 ## Key Features
 
 - **Multi-Scale Representation:** Decomposes images into multiple scales, enabling detailed feature extraction at different levels.
